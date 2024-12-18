@@ -15,7 +15,7 @@ function Navbar({ activeTab, setActiveTab }) {
           className={`nav-item ${activeTab === 'features' ? 'active' : ''}`}
           onClick={() => setActiveTab('features')}
         >
-          Features
+          About Us
         </button>
         <button 
           className={`nav-item ${activeTab === 'contact' ? 'active' : ''}`}

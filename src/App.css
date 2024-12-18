@@ -19,6 +19,11 @@
   padding: 1rem 2rem;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .nav-brand {
@@ -52,28 +57,147 @@
 }
 
 .main-content {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
+  padding-top: 80px;
+  width: 100%;
+  margin: 0;
 }
 
 .hero-section {
-  text-align: center;
-  padding: 8rem 2rem;
-  background: linear-gradient(
-    135deg,
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg,
     rgba(179, 25, 66, 0.15) 0%,
     rgba(255, 255, 255, 0.9) 50%,
     rgba(10, 49, 97, 0.15) 100%
   );
-  border-radius: 1rem;
-  margin: 2rem 0;
 }
 
-.hero-section h1 {
-  font-size: 4rem;
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.phone-mockup {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.mission-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.mission-section h2 {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-card {
+  padding: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+}
+
+.mission-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
   margin-bottom: 1rem;
-  color: var(--text-color);
+}
+
+.process-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(45deg,
+    rgba(10, 49, 97, 0.05) 0%,
+    rgba(179, 25, 66, 0.05) 100%
+  );
+}
+
+.process-section h2 {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: bold;
+}
+
+.step-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-top: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .phone-mockup {
+    margin: 2rem auto 0;
+  }
 }
 
 .subtitle {
@@ -157,7 +281,8 @@
 }
 
 .page-container {
-  min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+  padding-top: 60px;
+  min-height: calc(100vh - 80px);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -242,4 +367,164 @@
 
 .team-email:hover {
   color: var(--primary-color);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal-content h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cancel-button {
+  padding: 0.5rem 1rem;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.submit-button {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.about-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section {
+  margin-bottom: 4rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.problem-card {
+  background: linear-gradient(to bottom right, rgba(179, 25, 66, 0.05), rgba(10, 49, 97, 0.05));
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(10, 49, 97, 0.1);
+}
+
+.problem-card h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.solution-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.solution-feature {
+  padding: 1.5rem;
+  background: linear-gradient(to bottom right, rgba(10, 49, 97, 0.05), rgba(179, 25, 66, 0.05));
+  border-radius: 0.5rem;
+  border: 1px solid rgba(179, 25, 66, 0.1);
+}
+
+.solution-feature h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.vision {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.vision h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+}
+
+.vision p {
+  color: var(--text-color);
+  font-size: 1.2rem;
 }
