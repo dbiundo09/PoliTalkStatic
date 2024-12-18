@@ -16,7 +16,7 @@ function Features() {
           </div>
           
           <div className="feature-section">
-            <h3>Simple User Interface</h3>
+            <h3>Simple UI</h3>
             <p>Express your opinion on bills with a simple swipe left or right - democracy has never been more accessible.</p>
           </div>
           
