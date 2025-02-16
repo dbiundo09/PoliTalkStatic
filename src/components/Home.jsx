@@ -40,7 +40,7 @@ function Home() {
             </motion.button>
           </div>
           <div className="hero-image">
-            <img src="/logo.jpeg" alt="PoliTalk App" className="phone-mockup" />
+            <img src="/logo.png" alt="PoliTalk App" className="phone-mockup" />
           </div>
         </div>
       </motion.div>
