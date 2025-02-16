@@ -36,7 +36,7 @@ function Home() {
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsModalOpen(true)}
             >
-              Join the Movement
+              Join the Movement 
             </motion.button>
           </div>
           <div className="hero-image">
