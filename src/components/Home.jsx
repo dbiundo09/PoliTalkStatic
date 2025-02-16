@@ -1,10 +1,19 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import WaitlistModal from './WaitlistModal'
 import { FaBalanceScale, FaUsers, FaMobileAlt, FaChartLine } from 'react-icons/fa'
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [message, setMessage] = useState('')
+
+  useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL
+    fetch(`${apiUrl}/hello`)
+      .then(response => response.json())
+      .then(data => setMessage(data.message))
+      .catch(error => console.error('Error fetching message:', error))
+  }, [])
 
   return (
     <div className="page-container">
@@ -97,6 +106,8 @@ function Home() {
           </div>
         </div>
       </motion.div>
+
+      {message && <p>{message}</p>}
 
       <WaitlistModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
