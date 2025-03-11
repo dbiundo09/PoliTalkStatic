@@ -54,7 +54,7 @@ function Admin() {
     
     if (window.confirm('Are you sure you want to delete this bill?')) {
       try {
-        const response = await fetch(`${apiUrl}bills/deleteBill/${id}`, {
+        const response = await fetch(`${apiUrl}/bills/deleteBill/${id}`, {
           method: 'DELETE',
         });
         
