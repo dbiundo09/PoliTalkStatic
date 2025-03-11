@@ -6,6 +6,7 @@ import './BillSwiper.css';
 import getBills from '../../api/getBills';
 import { useEffect } from 'react';
 
+// TODO: Remove this
 const sampleBills = [
   {
     id: '1',
