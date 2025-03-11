@@ -1,0 +1,81 @@
+.about-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-section {
+    margin-bottom: 4rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-section h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .problem-card {
+    background: linear-gradient(to bottom right, rgba(179, 25, 66, 0.05), rgba(10, 49, 97, 0.05));
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(10, 49, 97, 0.1);
+  }
+  
+  .problem-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .solution-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .solution-feature {
+    padding: 1.5rem;
+    background: linear-gradient(to bottom right, rgba(10, 49, 97, 0.05), rgba(179, 25, 66, 0.05));
+    border-radius: 0.5rem;
+    border: 1px solid rgba(179, 25, 66, 0.1);
+  }
+  
+  .solution-feature h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .vision {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+  }
+  
+  .vision h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  .vision p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+  }

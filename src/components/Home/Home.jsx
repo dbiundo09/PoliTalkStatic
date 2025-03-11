@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import WaitlistModal from './WaitlistModal'
+import './Home.css'
+import WaitlistModal from '../Modals/WaitlistModal/WaitlistModal'
 import { FaBalanceScale, FaUsers, FaMobileAlt, FaChartLine } from 'react-icons/fa'
 
 function Home() {

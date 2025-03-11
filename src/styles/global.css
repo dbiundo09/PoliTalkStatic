@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #B31942;
+    --secondary-color: #0A3161;
+    --background-color: #ffffff;
+    --text-color: #0A3161;
+  }
+  
+  .app-container {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .patriotic-divider {
+    height: 4px;
+    background: linear-gradient(
+      to right,
+      var(--primary-color) 33%,
+      var(--background-color) 33%,
+      var(--background-color) 66%,
+      var(--secondary-color) 66%
+    );
+    margin: 2rem 0;
+  }
+  
+  .main-content {
+    width: 100%;
+    margin: 0;
+  }

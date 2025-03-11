@@ -1,0 +1,42 @@
+.contact-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact-content {
+    margin-top: 2rem;
+  }
+  
+  .team-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .team-member {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .team-member-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .team-member h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .team-member p {
+    color: #666;
+    line-height: 1.6;
+  }

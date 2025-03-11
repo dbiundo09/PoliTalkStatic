@@ -1,0 +1,257 @@
+.bill-swiper-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    position: relative;
+}
+
+.bill-card-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    min-height: 50%;
+    width: 100%;
+    position: relative;
+}
+
+.bill-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+    margin: 0 -1rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.bill-count {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+
+.vote-approve {
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+.vote-dismiss {
+    transform: translateX(-50px);
+    opacity: 0;
+}
+
+.voting-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.vote-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.05em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+.vote-button.approve {
+    background-color: #4CAF50;
+    right: 2rem;
+}
+
+.vote-button.dismiss {
+    background-color: #f44336;
+    left: 2rem;
+}
+
+.voting-stats-overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 35%;
+    margin-inline: auto;
+    width: fit-content;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    z-index: 1000;
+}
+
+.voting-stats-overlay h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    min-width: 120px;
+    transition: transform 0.2s ease;
+}
+
+.stat .label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.stat .value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.stat.approve {
+    background-color: #4CAF50;
+}
+
+.stat.dismiss {
+    background-color: #f44336;
+}
+
+/* Add overlay background */
+.voting-stats-overlay::before {
+    content: '';
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    right: -2rem;
+    bottom: -2rem;
+    background: rgba(216, 216, 216, 0.5);
+    z-index: -1;
+    border-radius: 12px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.end-state {
+    text-align: center;
+    padding: 2rem;
+}
+
+.end-state h1 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.end-state p {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.start-over-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.start-over-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.start-over-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-button {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    background: white;
+    color: #2c3e50;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: #f8f9fa;
+}
+
+.home-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
