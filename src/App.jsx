@@ -7,6 +7,7 @@ import Contact from './components/Contact/Contact'
 import Admin from './components/Admin/Admin'
 import TestApp from './components/TestApp/TestApp'
 import BillSwiper from './components/BillSwiper/BillSwiper'
+import SignUp from './components/SignUp/signUp'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
 function App() {
@@ -15,17 +16,17 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        {!['/admin', '/bills'].includes(window.location.pathname) && (
+        {!['/admin', '/bills', '/signUp'].includes(window.location.pathname) && (
           <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
         )}
-        {!['/admin', '/bills'].includes(window.location.pathname) && (
+        {!['/admin', '/bills', '/signUp'].includes(window.location.pathname) && (
           <div className="patriotic-divider" />
         )}
 
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signUp" element={<Home />} />
+            <Route path="/signUp" element={<SignUp />} />
             <Route path="/features" element={<Features />} />
             <Route path="/test-it-out" element={<TestApp />} />
             <Route path="/contact" element={<Contact />} />
