@@ -21,18 +21,27 @@ function Contact() {
                         <div className="team-member">
                             <img src="/gabe.jpeg" alt="Gabe Garcia" className="team-member-image" />
                             <h3>Gabe Garcia – Co-Founder</h3>
+                            <p>Gabe is a finance major with a strong background in government consulting and an interest in startup operations. As a leader in the Start@Shea club at Boston College, he has honed his skills in financial strategy and team management, making him the perfect founder to drive PoliTalk's mission.</p>
+                        </div>
 
-                            <p>Gabe is a finance major with a strong background in government consulting and an interest in startup operations. As a leader in the Start@Shea club at Boston College, he has honed his skills in financial strategy and team management, making him the perfect founder to drive PoliTalk’s mission.</p>
+                        <div className="team-member">
+                            <img src="/isabella.jpeg" alt="Isabella Pieretti" className="team-member-image" />
+                            <h3>Isabella Pieretti - CCO</h3>
+                            <p>
+                                Isabella is a Communications major with expertise in strategic communications and digital storytelling. As Head Podcast Editor at The Heights and through her work with various media organizations, she has developed strong marketing and leadership skills, making her the perfect Chief Communications Officer to drive PoliTalk's mission forward.
+                            </p>
                         </div>
                     </div>
 
                     <div className="contact-form">
                         <h3>Get In Touch</h3>
                         <p>Interested in learning more about PoliTalk? Contact us at:</p>
-                        <p>
+                        <div className="email-container">
                             <a href="mailto:biundo@bc.edu" className="team-email">biundo@bc.edu</a>
                             <a href="mailto:garciako@bc.edu" className="team-email">garciako@bc.edu</a>
-                        </p>
+                            <a href="mailto:pieretis@bc.edu" className="team-email">pieretis@bc.edu</a>
+                        </div>
+                        <hr/>
                     </div>
                 </div>
             </motion.div>

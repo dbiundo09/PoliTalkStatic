@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
+import './WaitlistModal.css'
 
 function WaitlistModal({ isOpen, onClose }) {
   const [name, setName] = useState('')
@@ -30,32 +31,10 @@ function WaitlistModal({ isOpen, onClose }) {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch('https://formsubmit.co/biundo@bc.edu', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          _subject: "New PoliTalk Waitlist Signup!",
-        })
-      })
-
-      if (response.ok) {
-        setMessage('Thank you for joining our waitlist!')
-        setName('')
-        setEmail('')
-        setTimeout(() => {
-          onClose()
-          setMessage('')
-        }, 3000)
-      } else {
-        setMessage('Something went wrong. Please try again.')
-      }
+      console.log('Signing up:', email)
+      onClose()
     } catch (error) {
-      setMessage('Something went wrong. Please try again.')
+      console.error('Error signing up:', error)
     }
     
     setIsSubmitting(false)
@@ -64,52 +43,43 @@ function WaitlistModal({ isOpen, onClose }) {
   if (!isOpen) return null
 
   return (
-    <motion.div 
-      className="modal-overlay"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <motion.div 
-        className="modal-content"
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        ref={modalRef}
-      >
-        <h2>Join the Waitlist</h2>
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={e => e.stopPropagation()}>
+        <button className="close-button" onClick={onClose}>&times;</button>
+        <h2>Join the Movement</h2>
+        <p>Sign up to be notified when PoliTalk launches!</p>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="modal-buttons">
-            <button type="button" onClick={onClose} className="cancel-button">
-              Cancel
-            </button>
-            <button type="submit" className="submit-button" disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting...' : 'Join Waitlist'}
-            </button>
-          </div>
-          {message && <p className="message">{message}</p>}
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+            required
+            style={{
+              width: '100%',
+              padding: '0.5rem',
+              marginBottom: '1rem',
+              borderRadius: '4px',
+              border: '1px solid #ccc'
+            }}
+          />
+          <button
+            type="submit"
+            style={{
+              width: '100%',
+              padding: '0.75rem',
+              backgroundColor: '#007bff',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+          >
+            Sign Up
+          </button>
         </form>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   )
 }
 

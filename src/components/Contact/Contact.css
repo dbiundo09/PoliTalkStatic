@@ -40,3 +40,19 @@
     color: #666;
     line-height: 1.6;
   }
+
+  .email-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .team-email {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .team-email:hover {
+    text-decoration: underline;
+  }

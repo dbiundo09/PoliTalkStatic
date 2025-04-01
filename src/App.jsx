@@ -7,7 +7,7 @@ import Contact from './components/Contact/Contact'
 import Admin from './components/Admin/Admin'
 import TestApp from './components/TestApp/TestApp'
 import BillSwiper from './components/BillSwiper/BillSwiper'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
 function App() {
   const [activeTab, setActiveTab] = useState('home')
@@ -25,6 +25,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/signUp" element={<Home />} />
             <Route path="/features" element={<Features />} />
             <Route path="/test-it-out" element={<TestApp />} />
             <Route path="/contact" element={<Contact />} />

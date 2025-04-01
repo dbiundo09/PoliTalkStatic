@@ -34,6 +34,7 @@ export default function BillSwiper() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showStats, setShowStats] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
+  const [voteStats, setVoteStats] = useState({ yes: 58, no: 42 });
 
   useEffect(() => {
     getBills().then(bills => {
@@ -42,7 +43,15 @@ export default function BillSwiper() {
     });
   }, []);
 
+  const generateRandomStats = () => {
+    const yesPercentage = Math.floor(Math.random() * (65 - 35 + 1)) + 35;
+    const noPercentage = 100 - yesPercentage;
+    return { yes: yesPercentage, no: noPercentage };
+  };
+
   const handleVote = (approved) => {
+    const newStats = generateRandomStats();
+    setVoteStats(newStats);
     setShowStats(true);
     setTimeout(() => {
       setShowStats(false);
@@ -136,11 +145,11 @@ export default function BillSwiper() {
             <div className="stats-container">
               <div className="stat approve">
                 <span className="label">YES</span>
-                <span className="value">58%</span>
+                <span className="value">{voteStats.yes}%</span>
               </div>
               <div className="stat dismiss">
                 <span className="label">NO</span>
-                <span className="value">42%</span>
+                <span className="value">{voteStats.no}%</span>
               </div>
             </div>
           </motion.div>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import './Home.css'
 import WaitlistModal from '../Modals/WaitlistModal/WaitlistModal'
 import { FaBalanceScale, FaUsers, FaMobileAlt, FaChartLine } from 'react-icons/fa'
@@ -7,6 +8,17 @@ import { FaBalanceScale, FaUsers, FaMobileAlt, FaChartLine } from 'react-icons/f
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [message, setMessage] = useState('')
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // Check if we're coming from /signUp
+    if (location.pathname === '/signUp') {
+      setIsModalOpen(true)
+      // Navigate to home page but keep the modal open
+      navigate('/', { replace: true })
+    }
+  }, [location, navigate])
 
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_API_URL
@@ -15,6 +27,13 @@ function Home() {
       .then(data => setMessage(data.message))
       .catch(error => console.error('Error fetching message:', error))
   }, [])
+
+  const handleModalClose = () => {
+    setIsModalOpen(false)
+    if (location.pathname === '/signUp') {
+      navigate('/', { replace: true })
+    }
+  }
 
   return (
     <div className="page-container">
@@ -108,9 +127,8 @@ function Home() {
         </div>
       </motion.div>
 
-      {message && <p>{message}</p>}
 
-      <WaitlistModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <WaitlistModal isOpen={isModalOpen} onClose={handleModalClose} />
     </div>
   )
 }
